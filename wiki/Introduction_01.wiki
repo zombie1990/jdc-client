@@ -1,5 +1,5 @@
+#summary Introduction about the 802.1X and it Authentication.
 #labels 802.1X,EAP,EAPOL
-#Introduction about the 802.1X and it Authentication.
 
 = 802.1X =
 
