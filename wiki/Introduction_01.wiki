@@ -1,5 +1,5 @@
 #labels 802.1X,EAP,EAPOL
-#802.1X以及其认证方式的介绍.
+#Introduction about the 802.1X and it Authentication.
 
 = 802.1X =
 
