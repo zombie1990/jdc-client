@@ -12,6 +12,16 @@ Linux用户需要安装libpcap
 make
 makeinstall
 
+没有gcc，yacc，flex的Linux用户有一个简便的方法，直接把bin目录下的找到下面5个文件
+libjpcap.so
+libpcap.a
+libpcap.so
+libpcap.so.1
+libpcap.so.1.1.1
+运行命令
+chmod 755 lib*
+cp lib* /usr/lib/
+
 项目结构：
 bin\JDC-Client.jar
 bin\Jpcap.dll
