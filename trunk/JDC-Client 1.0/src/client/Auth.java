@@ -2,6 +2,7 @@ package client;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -53,8 +54,8 @@ public class Auth {
 		// index of the device.
 		int index;
 		// show the version and author.
-		System.out.println();
-		System.out.println("DigitalChina-Client(TM) Version: " + "3.5.10.0713fk");
+		System.out.println("DigitalChina-Client(TM)");
+		System.out.println("Version: " + "3.5.10.0713fk");
 		System.out.println("Author: xiyu");
 		System.out.println();
 		
@@ -65,7 +66,7 @@ public class Auth {
 				System.out.println("Network-Adapter not found, [exit].");
 				System.exit(0);
 			}
-			System.out.println("Found " + devices.length + " Network-Adapter(s)");
+			System.out.println("Find " + devices.length + " Network-Adapter(s) below");
 			for(int i = 0; i < devices.length; i++) {
 				System.out.println("Number " + i + " : " + devices[i].description + " " + devices[i].name);
 			}
@@ -80,11 +81,11 @@ public class Auth {
 					if(index >= 0 && index < devices.length) {
 						break;
 					}else {
-						System.out.println("incorrect, retry...");
+						System.out.println("Incorrect, retry...");
 						continue;
 					}
 				} catch(InputMismatchException e) {
-					System.out.println("incorrect, retry...");
+					System.out.println("Incorrect, retry...");
 					continue;
 				}
 			}
@@ -149,10 +150,10 @@ public class Auth {
 					System.out.println("Sending password...");
 				}
 				else if(receivedPacket.data[4] == EAPPacket.SUCCESS) {
-					System.out.println("Authentication [SUCCESS]: Enjoying yourself!");
+					System.out.println("Authentication [SUCCESS]: " + new Date().toString());
 				}
 				else if(receivedPacket.data[4] == EAPPacket.FAILURE) {
-					System.out.println("Authentication [FAILURE]: Oh no!");
+					System.out.println("Authentication [FAILURE]: " + new Date().toString());
 					break;
 				}
 				else if(receivedPacket.data[4] == EAPPacket.REQUEST && receivedPacket.data[8] == EAPPacket.HANDSHAKE_TYPE) {
