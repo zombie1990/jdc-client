@@ -77,14 +77,14 @@ public class Auth {
 			while(true) {
 				try {
 					System.out.print("Which [number] of Network-Adapter to use: ");
-					index = scanner.nextInt();
+					index = Integer.parseInt(scanner.next());
 					if(index >= 0 && index < devices.length) {
 						break;
 					}else {
 						System.out.println("Incorrect, retry...");
 						continue;
 					}
-				} catch(InputMismatchException e) {
+				} catch(NumberFormatException e) {
 					System.out.println("Incorrect, retry...");
 					continue;
 				}
