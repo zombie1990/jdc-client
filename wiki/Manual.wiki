@@ -2,7 +2,7 @@
 
 = 前提要求 =
 
-因为整合了jpcap，但是jpcap依赖于pcap，所以需要先安装:<br>
+因为整合了jpcap，但是jpcap依赖于pcap，所以需要先安装:<br><br>
 Windows用户：WinPcap(4.1.1版本或更高)<br>
      下载地址：http://www.winpcap.org/install/default.htm<em>或直接从dependencies文件夹里找到并安装.</em><br>
 Linux用户：libpcap(1.1.1版本或更高)<br>
