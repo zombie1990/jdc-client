@@ -3,7 +3,7 @@
 
 = Introduction =
 
-<h1>EAPOL 消息的封装</h1>
+<h1>1.EAPOL 消息的封装</h1>
 
 <h2>POL 数据包的格式</h2>
 
