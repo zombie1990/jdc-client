@@ -87,14 +87,16 @@ Packet Body：表示数据内容，根据不同的Type 有不同的格式。
 
 </table>
 
-1.Code：指明EAP 包的类型，共有4 种：Request、Response、Success、Failure。<br>
-2.Success 和Failure 类型的包没有Data 域，相应的Length 域的值为4。<br>
-3.Request和Response类型数据包的Data域的格式所示。Type为EAP的认证类型，Typedata的内容由类型决定。例如，Type值为1 时代表Identity，用来查询对方的身份；Type值为4 时，代表MD5-Challenge，类似于PPP CHAP协议，包含质询消息。<br>
-4.Request 和Response 类型数据包的Data 域的格式<br>
-Identifier：用于匹配Request 消息和Response 消息。<br>
-Length：EAP 包的长度，包含Code、Identifier、Length 和Data 域，单位为字节。<br>
-Data：EAP 包的内容，由Code 类型决定。<br>
-*2.EAP 属性的封装
+Code：指明EAP 包的类型，共有4 种：Request、Response、Success、Failure。(1 byte)<br>
+1.Success 和Failure 类型的包没有Data 域，相应的Length 域的值为4。<br>
+2.Request和Response类型数据包的Data域的格式所示。Type为EAP的认证类型，Typedata的内容由类型决定。例如，Type值为1 时代表Identity，用来查询对方的身份；Type值为4 时，代表MD5-Challenge，类似于PPP CHAP协议，包含质询消息。<br><br>
+Request 和Response 类型数据包的Data 域的格式:<br>
+   Identifier：用于匹配Request 消息和Response 消息。<br>
+   Length：EAP 包的长度，包含Code、Identifier、Length 和Data 域，单位为字节。(注意这里的长度不包含EALOL的包头长度，即：不包含EAPOL的version，type，length<br>
+   Data：EAP 包的内容，由Code 类型决定。<br>
+<br>
+<br>
+<b>EAP 属性的封装</b>
 
 RADIUS 为支持EAP 认证增加了两个属性：EAP-Message（EAP 消息）和Message-Authenticator
 （消息认证码）。
