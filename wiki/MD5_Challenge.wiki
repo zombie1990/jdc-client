@@ -1,4 +1,4 @@
-#summary 主要讲解应该如何应答从服务器发出的md5-challenge请求帧.
+#summary 主要讲解应该如何应答服务器发出的md5-challenge请求帧.
 
 = Introduction =
 
