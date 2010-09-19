@@ -3,7 +3,134 @@
 
 = Introduction =
 
-Add your content here.
+<h1>EAPOL 消息的封装</h1>
+
+<h2>POL 数据包的格式</h2>
+
+EAPOL是802.1X协议定义的一种报文封装格式，主要用于在客户端和设备端之间传送EAP协议报
+文，以允许EAP协议报文在LAN上传送。EAPOL数据包的格式如图 
+
+
+ <h3>EAPOL 数据包格式</h3>
+ 
+ <table border="1" width="500" >
+   <tr>
+    <th colspan="2">PAE Ehernet Type</th>
+    
+   </tr>
+   <tr>
+    <th align="center">Protocol Version </th>
+    <th align="center">Type</th>
+   </tr>
+   <tr>
+    <th colspan="2";align="center"> Length</th>
+   </tr>
+   <tr>
+    <th colspan="2";align="center"> Packet Body</th>
+   </tr>
+
+</table>
+
+PAE Ethernet Type：表示协议类型，为0x888E。
+Protocol Version：表示EAPOL 帧的发送方所支持的协议版本号。
+Type：表示EAPOL数据帧类型。
+
+ <h3 align="center" >EAPOL 数据类型</h3>
+
+<table border="1" width="500" >
+   <tr>
+    <th >类型</th>
+    <th width ="250">说明</th>
+   </tr>
+   <tr>
+    <th align="center">EAP-Packet（值为0x00）：认证信息帧，用于承载认证信息 </th>
+    <th align="center">该帧在设备端重新封装并承载于 RADIUS 协议上，便于穿越复杂的网络到达认证服务器</th>
+   </tr>
+   <tr>
+    <th align="center"> EAPOL-Start（值为0x01）：认证发起帧</th>
+    <th rowspan="2";align="center"> 这两种类型的帧仅在客户端和设备端之间存在</th>
+   </tr>
+   <tr>
+    <th align="center"> EAPOL-Logoff（值为0x02）：退出请求帧</th>
+    <th align="center"> </th>
+   </tr>
+
+</table>
+ 
+
+<h3>说明：</h3>该帧在设备端重新封装并承载于 RADIUS 协议上，便于穿越复杂的网络到达认证服务器
+
+i.  EAP-Packet（值为0x00）：认证信息帧，用于承载认证信息
+ii. EAPOL-Start（值为0x01）：认证发起帧
+iii. EAPOL-Logoff（值为0x02）：退出请求帧
+
+Length：表示数据长度，也就是“Packet Body”字段的长度，单位为字节。如果为0，则表示没
+有后面的数据域。
+Packet Body：表示数据内容，根据不同的Type 有不同的格式。
+
+<h1>2. EAP 数据包的格式</h1>
+当EAPOL数据包格式Type域为EAP-Packet时，Packet Body为EAP数据包结构.
+
+
+<table border="1" width="500" >
+   <tr>
+    <th >Code</th>
+    <th width ="250">Identifier</th>
+   </tr>
+   <tr>
+    <th colspan="2";align="center">Length </th>
+  
+   </tr>
+   <tr>
+    <th colspan="2";align="center"> Date</th>
+    </tr>
+  
+
+</table>
+
+1.Code：指明EAP 包的类型，共有4 种：Request、Response、Success、Failure。<br>
+2.Success 和Failure 类型的包没有Data 域，相应的Length 域的值为4。<br>
+3.Request和Response类型数据包的Data域的格式所示。Type为EAP的认证类型，Typedata的内容由类型决定。例如，Type值为1 时代表Identity，用来查询对方的身份；Type值为4 时，代表MD5-Challenge，类似于PPP CHAP协议，包含质询消息。<br>
+4.Request 和Response 类型数据包的Data 域的格式<br>
+Identifier：用于匹配Request 消息和Response 消息。<br>
+Length：EAP 包的长度，包含Code、Identifier、Length 和Data 域，单位为字节。<br>
+Data：EAP 包的内容，由Code 类型决定。<br>
+*2.EAP 属性的封装
+
+RADIUS 为支持EAP 认证增加了两个属性：EAP-Message（EAP 消息）和Message-Authenticator
+（消息认证码）。
+
+*1. EAP-Message
+
+这个属性用来封装EAP数据包，类型代码为79，String域最长253 字节，如果EAP数据包长度大于253 字节，可以对其进行分片，依次封装在多个EAP-Message属性中。
+ 
+*EAP-Message 属性封装
+ 
+<table border="1" width="500" >
+   <tr>
+    <th >Type</th>
+    <th >Length</th>
+    <th >String(封装了EAP 数据包)</th>
+   </tr>
+</table>
+
+
+*2. Message-Authenticator
+
+这个属性用于在使用EAP、CHAP等认证方法的过程中，避免接入请求包被窃听。在
+含有EAP-Message属性的数据包中，必须同时也包含Message-Authenticator，否则该数据包会被
+认为无效而被丢弃。
+
+*Message-Authenticator 属性
+ <table border="1" width="500" >
+   <tr>
+    <th >Type</th>
+    <th >Length</th>
+    <th >String</th>
+   </tr>
+</table>
+ 
+         
 
 
 = Details =
