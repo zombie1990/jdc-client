@@ -92,7 +92,7 @@ Code：指明EAP 包的类型，共有4 种：Request、Response、Success、Fai
 2.Request和Response类型数据包的Data域的格式所示。Type为EAP的认证类型，Typedata的内容由类型决定。例如，Type值为1 时代表Identity，用来查询对方的身份；Type值为4 时，代表MD5-Challenge，类似于PPP CHAP协议，包含质询消息。<br><br>
 Request 和Response 类型数据包的Data 域的格式:<br>
    Identifier：用于匹配Request 消息和Response 消息。<br>
-   Length：EAP 包的长度，包含Code、Identifier、Length 和Data 域，，由Code 类型决定,单位为字节。<b>(注意这里的长度不包含EALOL的包头长度，即：不包含EAPOL的version，type，length<br>
+   Length：EAP 包的长度，包含Code、Identifier、Length 和Data 域，，由Code 类型决定,单位为字节。<b>(注意这里的长度不包含EALOL的包头长度，即：不包含EAPOL的version，type，length
    Data：EAP 包的内容。)</b><br>
 <br>
 <br>
