@@ -17,7 +17,7 @@
 <br><br>
 = 使用方法 =
 
-<h4>建议在Java虚拟机版本1.6或更高下运行：</h4><br><br>
+<h4>建议在Java虚拟机版本1.6或更高下运行：</h4><br>
 <b>Windows用户：</b><br>
     打开命令提示符cmd,cd 到JDC-Client.jar文件目录下：<br>
     执行java -jar JDC-Client.jar<br>
