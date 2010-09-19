@@ -1,13 +1,34 @@
 #summary 介绍本软件的使用方法.
 
-= Introduction =
+= 前提要求 =
 
-Add your content here.
+因为整合了jpcap，但是jpcap依赖于pcap，所以需要先安装:
+Windows用户：WinPcap(4.1.1版本或更高)<br>
+     下载地址：http://www.winpcap.org/install/default.htm，或直接从dependencies文件夹里找到并安装.<br>
+Linux用户：libpcap(1.1.1版本或更高)<br>
+     下载地址：http://www.tcpdump.org/<br>
+<b>小提示：libpcap需要用gcc编译器make安装，如果闲麻烦或不会，可以直接将bin下面已经编译好的动静态链接库复制到/usr/lib/下<br>
+libjpcap.so<br>
+libpcap.a<br>
+libpcap.so<br>
+libpcap.so.1<br>
+libpcap.so.1.1.1<br>
 
+= 使用方法 =
 
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+建议在Java虚拟机版本1.6或更高下运行：<br>
+Windows下：打开命令提示符cmd<br>
+cd 到JDC-Client.jar文件目录下：<br>
+执行java -jar JDC-Client.jar<br>
+根据运行提示信息首先输入网卡号(注：您的电脑可能有多个网卡，并确保输入的一定是数字)<br>
+根据提示输入认证帐号<br>
+根据提示输入认证密码<br>
+认证成功或失败<br>
+<br>
+Linux下：打开终端<br>
+cd 到JDC-Client.jar文件目录下：<br>
+执行java -jar JDC-Client.jar<br>
+根据运行提示信息首先输入网卡号(注：您的电脑可能有多个网卡，并确保输入的一定是数字)<br>
+根据提示输入认证帐号<br>
+根据提示输入认证密码<br>
+认证成功或失败<br>
