@@ -1,4 +1,0 @@
-#summary 802.1X 的认证,接入,定时器
-#labels 认证,接入,定时器
-
-= Introduction =
