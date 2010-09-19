@@ -58,10 +58,10 @@ Type：表示EAPOL数据帧类型(1 byte)。<br>
  
 
 <h3>说明：</h3>该帧在设备端重新封装并承载于 RADIUS 协议上，便于穿越复杂的网络到达认证服务器
-
-i.  EAP-Packet（值为0x00）：认证信息帧，用于承载认证信息
-ii. EAPOL-Start（值为0x01）：认证发起帧
-iii. EAPOL-Logoff（值为0x02）：退出请求帧
+<br>
+  i.  EAP-Packet（值为0x00）：认证信息帧，用于承载认证信息<br>
+  ii. EAPOL-Start（值为0x01）：认证发起帧<br>
+  iii. EAPOL-Logoff（值为0x02）：退出请求帧<br>
 
 Length：表示数据长度，也就是“Packet Body”字段的长度，单位为字节。如果为0，则表示没
 有后面的数据域。
@@ -92,8 +92,8 @@ Code：指明EAP 包的类型，共有4 种：Request、Response、Success、Fai
 2.Request和Response类型数据包的Data域的格式所示。Type为EAP的认证类型，Typedata的内容由类型决定。例如，Type值为1 时代表Identity，用来查询对方的身份；Type值为4 时，代表MD5-Challenge，类似于PPP CHAP协议，包含质询消息。<br><br>
 Request 和Response 类型数据包的Data 域的格式:<br>
    Identifier：用于匹配Request 消息和Response 消息。<br>
-   Length：EAP 包的长度，包含Code、Identifier、Length 和Data 域，单位为字节。(注意这里的长度不包含EALOL的包头长度，即：不包含EAPOL的version，type，length<br>
-   Data：EAP 包的内容，由Code 类型决定。<br>
+   Length：EAP 包的长度，包含Code、Identifier、Length 和Data 域，，由Code 类型决定,单位为字节。<b>(注意这里的长度不包含EALOL的包头长度，即：不包含EAPOL的version，type，length<br>
+   Data：EAP 包的内容。)</b><br>
 <br>
 <br>
 <b>EAP 属性的封装</b>
