@@ -15,7 +15,7 @@ EAPOL是802.1X协议定义的一种报文封装格式，主要用于在客户端
  
  <table border="1" width="500" >
    <tr>
-    <th colspan="2">PAE Ehernet Type</th>
+    <th colspan="2">Ehernet Type</th>
     
    </tr>
    <tr>
@@ -31,11 +31,11 @@ EAPOL是802.1X协议定义的一种报文封装格式，主要用于在客户端
 
 </table>
 
-PAE Ethernet Type：表示协议类型，为0x888E。
-Protocol Version：表示EAPOL 帧的发送方所支持的协议版本号。
-Type：表示EAPOL数据帧类型。
+Ethernet Type：表示协议类型(2 bytes)，承载于EthernetII 类型值为0x888e。<br>
+Protocol Version：表示EAPOL帧的发送方所支持的协议版本号(1 byte)。<br>
+Type：表示EAPOL数据帧类型(1 byte)。<br>
 
- <h3 align="center" >EAPOL 数据类型</h3>
+ <h3>Type类型</h3>
 
 <table border="1" width="500" >
    <tr>
@@ -48,7 +48,7 @@ Type：表示EAPOL数据帧类型。
    </tr>
    <tr>
     <th align="center"> EAPOL-Start（值为0x01）：认证发起帧</th>
-    <th rowspan="2";align="center"> 这两种类型的帧仅在客户端和设备端之间存在</th>
+    <th rowspan="2";align="center"> 这两种类型的帧仅在客户端和设备端之间存在，通常Length值为0，后面没有数据域</th>
    </tr>
    <tr>
     <th align="center"> EAPOL-Logoff（值为0x02）：退出请求帧</th>
