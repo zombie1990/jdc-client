@@ -7,7 +7,7 @@ Windows用户：WinPcap(4.1.1版本或更高)<br>
      下载地址：http://www.winpcap.org/install/default.htm，或直接从dependencies文件夹里找到并安装.<br>
 Linux用户：libpcap(1.1.1版本或更高)<br>
      下载地址：http://www.tcpdump.org/<br>
-<b>小提示：libpcap需要用gcc编译器make安装，如果闲麻烦或不会，可以直接将bin下面已经编译好的动静态链接库复制到/usr/lib/下<br>
+<b>小提示：libpcap需要用gcc编译器make安装，如果闲麻烦或不会，可以直接将bin下面已经编译好的动静态链接库复制到/usr/lib/下</b><br>
 libjpcap.so<br>
 libpcap.a<br>
 libpcap.so<br>
