@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.jsu.hibernate.domains">
+
+	<class name="Code" table="code_" lazy="true">
+
+		<id name="id" column="id_">
+			<generator class="uuid" />
+		</id>
+		<property name="compileError" column="compileError_" type="text" not-null="false" />
+		<property name="code" column="code_" type="text" not-null="true" />
+		
+	</class>
+	
+</hibernate-mapping>
