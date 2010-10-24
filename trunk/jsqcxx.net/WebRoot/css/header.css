@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+
+.top {
+	border-bottom-style:solid;
+	border-bottom-color:black;
+	border-bottom-width:thin;
+	border-bottom-color: #ffffff;
+	width:800px;
+	height: 34px;
+}
+
+.top .loginForm,
+.top .searchForm {
+	font-size: 10px;
+
+}
+
+.top .loginButton,
+.top .searchButton {
+	font-size: 10px;
+}
+
+.top .register,
+.top .nowTime {
+	color: black;
+	text-decoration: none;
+}
+
+.top .loginForm .username,
+.top .loginForm .password {
+	font-family: arial;
+	font-size: 12px;
+	width: 100px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ffffff;
+	border-top-color: #aca899;
+	border-left-color: #aca899;
+}
+
+.top .searchForm .search {
+	font-family: arial;
+	font-size: 12px;
+	width: 180px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ffffff;
+	border-top-color: #aca899;
+	border-left-color: #aca899;
+}
+
+#nav {
+	height: 30px;
+	width: 800px;
+	background-image: url("../images/menu-bg.png");
+}
+
+#nav ul {
+	margin: 0 0 0 30px;
+	font-size: 12px;
+	color: #FFF;
+	line-height: 30px;
+	white-space: nowrap;
+}
+
+#nav li {
+	list-style-type: none;
+	display: inline;
+	padding:6px;
+}
+
+#nav li a {
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 7px 10px;
+	color: #ffffff;
+}
+
+#nav li a:hover {
+	color: #ffffff;
+	background-color: #ff0000
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="edu.domains" catalog="qianchengxx">
+
+	<class name="Comment" table="comment">
+
+		<id name="uuid" column="uuid">
+			<generator class="uuid" />
+		</id>
+		<property name="content" column="content" not-null="true" type="text" />
+		<property name="postTime" column="post_time" not-null="true" />
+		
+		<many-to-one name="user" column="author" not-null="true" />
+		<many-to-one name="blog" column="blog_id" not-null="true" />
+		
+	</class>
+	
+</hibernate-mapping>
