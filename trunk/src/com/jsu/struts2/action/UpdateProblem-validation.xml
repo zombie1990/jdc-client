@@ -1,0 +1,82 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+    <field name="title">
+        <field-validator type="requiredstring">
+            <message key="title required"/>
+        </field-validator>
+    </field>
+    
+    <field name="timeLimit">
+        <field-validator type="int">
+            <param name="min">1</param>
+            <param name="max">9999</param>
+            <message key="timeLimit illogical"/>
+        </field-validator>
+    </field>
+
+    <field name="memoryLimit">
+        <field-validator type="int">
+            <param name="min">1</param>
+            <param name="max">99999999</param>
+            <message key="memoryLimit illogical"/>
+        </field-validator>
+    </field>
+
+    <field name="javaTimeLimit">
+        <field-validator type="int">
+            <param name="min">1</param>
+            <param name="max">9999</param>
+            <message key="javaTimeLimit illogical"/>
+        </field-validator>
+    </field>
+
+    <field name="javaMemoryLimit">
+        <field-validator type="int">
+            <param name="min">1</param>
+            <param name="max">99999999</param>
+            <message key="javaMemoryLimit illogical"/>
+        </field-validator>
+    </field>
+    
+
+    
+    <field name="description">
+        <field-validator type="requiredstring">
+            <message key="description required"/>
+        </field-validator>
+    </field>
+
+    <field name="input">
+        <field-validator type="requiredstring">
+            <message key="input required"/>
+        </field-validator>
+    </field>
+    
+    <field name="output">
+        <field-validator type="requiredstring">
+            <message key="output required"/>
+        </field-validator>
+    </field>
+    
+    <field name="sampleInput">
+        <field-validator type="requiredstring">
+            <message key="sampleInput required"/>
+        </field-validator>
+    </field>
+    
+    <field name="sampleOutput">
+        <field-validator type="requiredstring">
+            <message key="sampleOutput required"/>
+        </field-validator>
+    </field>
+    
+    <field name="author">
+        <field-validator type="requiredstring">
+            <message key="author required"/>
+        </field-validator>
+    </field>
+    
+</validators>
