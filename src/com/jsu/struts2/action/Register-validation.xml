@@ -1,0 +1,39 @@
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+    <field name="password">
+        <field-validator type="requiredstring">
+            <message key="password required"/>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="trim">true</param>
+            <param name="minLength">6</param>
+            <param name="maxLength">16</param>
+            <message key="password length should be more than 6 chars"/>
+        </field-validator>
+    </field>
+    
+    <field name="repassword">
+        <field-validator type="requiredstring">
+            <message key="repassword required"/>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="trim">true</param>
+            <param name="minLength">6</param>
+            <param name="maxLength">16</param>
+            <message key="re-password length should be more than 6 chars"/>
+        </field-validator>
+    </field>
+    
+    <field name="email">
+        <field-validator type="requiredstring">
+            <message key="E-mail required"/>
+        </field-validator>
+        <field-validator type="email">
+            <message key="illogical E-mail address"/>
+        </field-validator>
+    </field>
+
+</validators>

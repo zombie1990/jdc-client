@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.jsu.hibernate.domains">
+
+	<class name="Solution" table="solution_" lazy="true">
+
+		<id name="id" column="id_">
+			<generator class="uuid" />
+		</id>
+		<property name="codeLength" column="codeLength_" not-null="true" />
+		<property name="date" column="date_" not-null="true" />
+		<property name="ip" column="ip_" not-null="true" />
+		<property name="language" column="language_" not-null="true" />
+		<property name="numberOfWrongTestCase" column="numberOfWrongTestCase_" not-null="false" />
+		<property name="useTime" column="useTime_" not-null="false" />
+		<property name="useMemory" column="useMemory_" not-null="false" />
+		<property name="status" column="status_" not-null="true" />
+		<property name="problemIdInContest" column="problemIdInContest_" not-null="false"/>
+		
+		<!-- Bidirectional associations -->
+		<many-to-one name="user" column="username_" not-null="true" />
+		<many-to-one name="problem" column="problemId_" not-null="true" />
+		<many-to-one name="contest" column="contestId_" not-null="false" />
+		
+		<!-- Unidirectional associations -->
+		<many-to-one name="code" column="codeId_" unique="true" not-null="true" />
+
+
+		
+		
+	</class>
+	
+</hibernate-mapping>
