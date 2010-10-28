@@ -20,7 +20,7 @@ public class FindBlogs extends ActionSupport {
 		if(null == type || "".equals(type) || null == section || "".equals(section))
 			return ERROR;
 		count = DAOFactory.getInstance().getBlogDAO().getCount(type);
-		blogs = DAOFactory.getInstance().getBlogDAO().getBlogsByType(type, op, 4);
+		blogs = DAOFactory.getInstance().getBlogDAO().getBlogsByType(type, op, op+4);
 		
 		if("xxgk".equals(section))
 			return "xxgk";
